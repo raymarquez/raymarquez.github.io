@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+    <head>
+		<meta charset="UTF-8">	<title>Prescient Wind Speed</title>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+		<link rel="stylesheet"  href="../05_style.css">
+    </head>
+	
+    <body>
+		<!-------------------------------------------------------------------------------------------------------->
+		<!--                                                NAV  												-->
+		<nav class="navbar navbar-default">
+			<div class="container-fluid">
+					<!--									... LANDING PAGE  								    -->
+					<div class="navbar-header">
+						<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+							<span class="sr-only">Toggle navigation</span><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></button>
+						<a class="navbar-brand" href="../01_landing.html"><span class="latitude"></span>Latitude</a></div>
+					<!--									... VIZ & DATA PAGES 							    -->
+					<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+						<ul class="nav navbar-nav navbar-right">
+							<li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Plots<span class="caret"></span></a>
+								<ul class="dropdown-menu">
+									<li><a href="20_max_temp.html">Maximum Temperature</a></li>
+									<li><a href="22_humidity.html">Humidity</a></li>
+									<li><a href="24_cloudiness.html">Cloudiness</a></li>
+									<li><a href="26_wind.html">Wind Speed</a></li></ul></li>
+							<li><a href="../30_comparison.html">Comparisons</a></li>
+							<li><a href="../40_data.html">Data</a></li></ul></div></div>
+		</nav>	
+		<!-------------------------------------------------------------------------------------------------------->
+		<!--                                                CONTAINER  											-->	
+		
+        <div class="content"><div class="container-fluid"><div class="row">
+		
+			<div class="col-sm-12 col-md-8"><div class="box">
+				<div class="header">	<h1 class="summary">Wind Speed</h1></div>
+				<div class="content">	<img src="ChartWind.png" alt="Latitude vs. Wind Speed" class="img-responsive">	
+										<p class="category">  The City Latitude vs. Wind Speed chart shows that most cities experience around 10 mph and below, with slightly more cities experiencing winds of up to 15 to 20 mph. Above 20 mph are more likely to occur in cities well above the equator.</p></div>										
+			</div></div>
+   
+            <div class="col-sm-12 col-md-4"><div class="box">
+                <div class="header">	<h1 class="summary">Visualizations</h1></div>
+                <div class="content">  	<a href="20_max_temp.html"><img src="ChartTemp.png" alt="Latitude vs. Max Temperature" height="180" width="180"></a>
+										<a href="22_humidity.html"><img src="ChartHumid.png" alt="Latitude vs. Humidity" height="180" width="180"></a>
+										<a href="24_cloudiness.html"><img src="ChartCloudy.png" alt="Latitude vs. Cloudiness" height="180" width="180"></a>
+										<a href="26_wind.html"><img src="ChartWind.png" alt="Latitude vs. Wind Speed" height="180" width="180"></a></div>
+            </div></div>
+        </div></div></div>
+		<!-------------------------------------------------------------------------------------------------------->	
+		<!-----------------------------------------------  FOOTER  												-->	
+		<footer class="footer navbar-fixed-bottom"><div class="two-toned-footer-color"></div>
+			<p class="text-muted text-muted-footer text-center">&copy; Prescient Insights, Data Analytics and Visualization </p>
+		</footer>  	    
+    </body>
+</html>
