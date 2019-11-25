@@ -45,34 +45,53 @@
 
 		<!-------------------------------------------------------------------------------------------------------->
 		<!--                                                CONTAINER  											-->
-        <div class="content"><div class="container-fluid"><div class="row">
-		
+<div class="content"><div class="container-fluid"><div class="row">
 			<div class="col-sm-12 col-md-8"><div class="box">
-				<div class="header">	<h1 class="summary">What say you Sancta...</h1></div>
-				<div class="content">	<img src="i_trend.png" alt="James" class="img-responsive">	
-										<p class="category">Space for Analysis, Visualizations, Findings, Recommendations, Predictions,
-										..........................................................................................................................
-										..........................................................................................................................
-										..........................................................................................................................
-										..........................................................................................................................
-										..........................................................................................................................
-										..........................................................................................................................
-										..........................................................................................................................
-										..........................................................................................................................
-										..........................................................................................................................
-										..........................................................................................................................
-										..........................................................................................................................
-										..........................................................................................................................
-										..........................................................................................................................
-										..........................................................................................................................
-										..........................................................................................................................
-										..........................................................................................................................
-										..........................................................................................................................
-										..........................................................................................................................
-										..........................................................................................................................
-										..........................................................................................................................											
-										</p></div>										
-			</div></div>
+				<div class="header">	<h1 class="description-header" style="font-size:20px;","color:majenta;">MORTGAGE PREAPROVAL </h1></div>
+				<div class="content">	<img src="mortgage.jpg" alt="James" class="pull-left"  alt="" id="homeP">	
+										<p style="font-family:courier;">Although there are different options you can turn on for housing mortgage, there are always relatively minimum standards you must meet to qualify; consequently,it’s a good ideas prior your house searching,to find out how much you potentially qualify to borrow. That means you’re not wasting time looking at homes outside your price range or loan type which wouldn't help you.</p>
+										<p style="font-family:courier;">ML is generally used by lenders to try to estimate the probability of granting a loan given the value of borrowers input variables.
+											<ul>
+												<li>	Personal information:  Age, Marital status, income, geographical location</li>
+												<li>	Credit information: Total amount</li>
+												<li>	Credit history</li>
+												<li>	Bank account behavioral</li>
+											</ul>
+										<h2>
+										<span style="color:grey;"> Objective</span>
+										</h2>
+										<p style="font-family:courier;">The objective of this study was to apply ML concepts on USDA data (2019) in different States to try to quantify the level of impact of borrowers behaviour on loan application.
+        									<img src="ML.jpg" id="homeP"></p>
+										<h2>
+										<span style="color:grey;"> Data source</span>
+										</h2>
+										<p style="font-family:courier;">The <a href="https://data.amerigeoss.org/nl/dataset/usda-rural-development-single-family-section-502-direct-active-borrowers-by-county" target="_blank">USDA guaranteed loan</a>
+										<h2>
+										<span style="color:grey;"> Data Description</span>
+										</h2>
+										<p style="font-family:courier;"> The Borrowers loan dataset is based on congressional District in each State and specify all active loans in each District, number of people in different defined categories based on level of income, race, marital Status, age as well as credit information like average gross income of borrowers in each of the districts, average request amount and average loan amount </p>
+										<h2>
+										<span style="color:grey"> Data Preprocessing</span>
+										</h2>
+										<p style="font-family:courier;"> This part involves data cleaning and preparation to check for missing data, group the predictors or independant variable(The study used borrower gross income and Requested amount) on State level, data conversion,...</p>
+										<h2>
+										<span style="color:grey;"> Data Analysis</span>
+										</h2>
+										<p style="font-family:courier;">Machine learning is used to increase understanding by showing which factors most affected specific outcomes</p>
+										<img src="score gross I Vs Loan.jpg" class="responsive_fluid">
+										<p style="font-family:courier;">In this predicting modeling, the data had to be partitioned into train and test sets;70% of the data is partitioned for training purpose and 30% for testing purpose. classification techniques(supervised learning)was used to analyse the dataset to bring out any relationship between predictors(explanatories)that are independent variables, in this case Gross income and requested amount and a response (outcome)that is a dependant variable; in this case, Given loan amount.
+										</p>
+										<h2>
+										<span style="color:grey;"> Results</span>
+										</h2>
+										<p style="font-family:courier;">Correlation matrix helps to understand correlated variables and classification methods: plotting Input variables against the outcome variable revealed a linear regression in some kind of proportionality. </p>
+										<p style="font-family:courier;">
+										 With running in the test and fit in the model, the Clf score was 1 for gross income predictor and 0,7 with customers requested loan amount .
+										<img src="Sancta_gross income.jpg"class="responsive_fluid" >
+										<img src="Sancta_Income VS requestedLoan.jpg" class="responsive_fluid" >
+										<img src="Sancta_score2.jpg" class="responsive_fluid">
+										</p>
+
    
             <div class="col-sm-12 col-md-4"><div class="box">
                 <div class="header">	<h1 class="summary">INSIGHTers</h1></div>
