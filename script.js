@@ -1,3 +1,4 @@
+<script>
 var margin = {top:10, right:30, bottom:30, left:40},
     width = 460 - margin.left - margin.right,
     height = 400 - margin.top - margin.bottom;
@@ -45,3 +46,4 @@ d3.csv("https://raw.githubusercontent.com/holtzy/data_to_viz/master/Example_data
 	    .style("fill","#69b3a2")
 	
 });
+</script>
