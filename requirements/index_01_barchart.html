@@ -104,7 +104,7 @@
 						
 						<h1 align="center"><strong><u></u></strong></h1>
 						<h1 align="center"><strong><u></u></strong></h1>
-						<h2 align="center"><strong><font color="blue">WHAT IS IT ? - $$ </font></strong></h2>
+						<h2 align="center"><strong><font color="blue">WHAT IS IT ? - ! </font></strong></h2>
 						<h2 align="center"><strong><u></u></strong></h2>
 
 			
@@ -148,7 +148,7 @@
                     <tr>
                               <td  scope="row" >Data Size</td>
                                         <td >Large datasets can be bound to SVG objects using D3.js functions</td>
-                                        <td >D</td>
+                                        <td ></td>
                                                                                                 </tr>
                     <tr>
                               <td  scope="row" >Data Formats</td>
@@ -221,14 +221,8 @@
 					<div class="content">
 						<!--<div class="thumbnail col-md-9">-->
 						
-						<a <div class="caption"><h3><center><b>Histogram - Covid-19 Deaths | Jan2020</b></center></h3></div>						
-						   <div id = "my_histogram_01" align="center"></div>
-						   <div class="content"><img src="01a_AdvTopic_Histogram_CovidDeaths_R.png" alt="Hist Covid Deaths" class="center" width=600 height=600> </div>
-				                </a>
-						
 						<a <div class="caption"><h3><center><b>Bar Chart - Covid-19 Deaths | Jan2020</b></center></h3></div>						
 						   <div id = "my_histogram_02" align="center"></div>
-						   <div class="content"><img src="01a_AdvTopic_Histogram_CovidDeaths_R.png" alt="Hist Covid Deaths" class="center" width=600 height=600> </div>
 				                </a>
 				
 			<!--				<a href="viz/index_amrita.html"><img src="viz/amrita.jpg" alt="Amrita" height="180" width="180"></a>
@@ -283,63 +277,7 @@
 		        
 
 		<!--<p id="demo">Bar Chart</p> -->
-		
-		<script>
-		var margin = {top:10, right:30, bottom:30, left:40},
-  		  width = 500 - margin.left - margin.right,
-		    height = 400 - margin.top - margin.bottom;
 
-		var svg = d3.select("#my_histogram_01")
- 		.append("svg")
-   		 	.attr("width", width + margin.left + margin.right)
-  		  	.attr("height", height + margin.top + margin.bottom)
-  		.append("g")
-    			.attr("transform",
-          			"translate(" + margin.left + "," + margin.top + ")");
-
-		//d3.csv("https://raw.githubusercontent.com/holtzy/data_to_viz/master/Example_dataset/1_OneNum.csv", function(data) { 
-		//d3.csv("http://datasets.flowingdata.com/hot-dog-contest-winners.csv", function(data) {
-		d3.csv("https://raw.githubusercontent.com/nytimes/covid-19-data/master/us-states.csv", function(data) {
-	
-	
-			var x = d3.scaleLinear()
-	  		.domain([0,35000])          // d3.max(data, function(d) { return +d.price })
-          		//.domain([0,d3.max(data, function(d) { return +d.price })])
-			//.domain([0,d3.max(data, function(d) { return +d.cases })])
-			.range([0, width]);
-	
-			svg.append("g")
-	  		.attr("transform", "translate(0," + height + ")")
-	  		.call(d3.axisBottom(x));
-	
-			var histogram = d3.histogram()
-	  		//.value(function(d) {return d.price;})
-			.value(function(d) {return d.deaths;})
-	  		.domain(x.domain())
-	  		.thresholds(x.ticks(10));
-	
-			var bins = histogram(data);
-	
-			var y = d3.scaleLinear()
-	  		.range([height, 0]);
-	  		y.domain([0, d3.max(bins, function(d) {return d.length; })]);
-	
-			svg.append("g")
-	  		.call(d3.axisLeft(y));
-	
-			svg.selectAll("rect")
-	  		.data(bins)
-	  		.enter()
-	  		.append("rect")
-	    			.attr("x",1)
-	    			.attr("transform",function(d) {return "translate(" + x(d.x0) + "," + y(d.length) + ")";})
-	    			.attr("width", function(d) {return x(d.x1) - x(d.x0)  ;})
-	    			.attr("height", function(d) {return height - y(d.length);})
-	    			//.style("fill","#69b3a2")
-				.style("fill","orange")
-	
-		});
-		</script>
 				
 		<script>
 			
