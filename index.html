@@ -104,7 +104,7 @@
 						
 						<h1 align="center"><strong><u></u></strong></h1>
 						<h1 align="center"><strong><u></u></strong></h1>
-						<h2 align="center"><strong><font color="blue">WHAT IS IT ? - $$ </font></strong></h2>
+						<h2 align="center"><strong><font color="blue">WHAT IS IT ? - $$$ </font></strong></h2>
 						<h2 align="center"><strong><u></u></strong></h2>
 
 			
@@ -340,20 +340,20 @@
 	
 		});
 		</script>
-				
-		<script>
+		<!--		
+		<script> // #2
 			
-		var margin = {top:10, right:30, bottom:30, left:40},
-  		  	width = 460 - margin.left - margin.right,
-		    	height = 450 - margin.top - margin.bottom;
+		var margin02 = {top:10, right:30, bottom:30, left:40},
+  		  	width = 460 - margin02.left - margin02.right,
+		    	height = 450 - margin02.top - margin02.bottom;
 
 		var svg = d3.select("#my_histogram_02")
  		.append("svg")
-   		 	.attr("width", width + margin.left + margin.right)
-  		  	.attr("height", height + margin.top + margin.bottom)
+   		 	.attr("width", width + margin02.left + margin02.right)
+  		  	.attr("height", height + margin02.top + margin02.bottom)
   		.append("g")
     			.attr("transform",
-          			"translate(" + margin.left + "," + margin.top + ")");
+          			"translate(" + margin02.left + "," + margin02.top + ")");
 			
 		d3.csv("https://raw.githubusercontent.com/holtzy/data_to_viz/master/Example_dataset/7_OneCatOneNum_header.csv", function(data) {
 		var x = d3.scaleBand()
@@ -394,7 +394,8 @@
 			
 		})	
 		</script>
-
+		-->
+		
 		<!-------------------------------------------------------------------------------------------------------->	
 		<!-----------------------------------------------  FOOTER  												-->	
 		<footer class="footer navbar-fixed-bottom"><div class="two-toned-footer-color"></div>
