@@ -101,7 +101,7 @@
 						
 						<h1 align="center"><strong><u></u></strong></h1>
 						<h1 align="center"><strong><u></u></strong></h1>
-						<h2 align="center"><strong><font color="blue">WHAT IS IT ? - $$$ </font></strong></h2>
+						<h2 align="center"><strong><font color="blue">WHAT IS IT ? - ! </font></strong></h2>
 						<h2 align="center"><strong><u></u></strong></h2>
 
 			
@@ -217,7 +217,7 @@
 						<!--<div class="thumbnail col-md-9">-->
 						
 						<div id = "my_histogram_01" align="center"></div>
-						<a <div class="caption"><h3><b>(1) Histogram - Hotdog Eating Contest</b></h3></div></a>
+						<a <div class="caption"><h3><center><b>(1) Histogram - Hotdog Eating Contest</b></center></h3></div></a>
 				
 			<!--				<a href="viz/index_amrita.html"><img src="viz/amrita.jpg" alt="Amrita" height="180" width="180"></a>
 								<!--<<div class="caption"><h3><b>Amrita</b></h3></div></a>-->							
@@ -285,13 +285,13 @@
     			.attr("transform",
           			"translate(" + margin.left + "," + margin.top + ")");
 
-		//d3.csv("https://raw.githubusercontent.com/holtzy/data_to_viz/master/Example_dataset/1_OneNum.csv", function(data) { 
-		d3.csv("http://datasets.flowingdata.com/hot-dog-contest-winners.csv", function(data) {
+		d3.csv("https://raw.githubusercontent.com/holtzy/data_to_viz/master/Example_dataset/1_OneNum.csv", function(data) { 
+		//d3.csv("http://datasets.flowingdata.com/hot-dog-contest-winners.csv", function(data) {
 	
 			var x = d3.scaleLinear()
-	  		//.domain([0,1000])          // d3.max(data, function(d) { return +d.price })
+	  		.domain([0,1000])          // d3.max(data, function(d) { return +d.price })
           		//.domain([0,d3.max(data, function(d) { return +d.price })])
-			.domain([0,d3.max(data, function(d) { return +d.Dogs.eaten })])
+			//.domain([0,d3.max(data, function(d) { return +d.Dogs.eaten })])
 			.range([0, width]);
 	
 			svg.append("g")
@@ -299,8 +299,8 @@
 	  		.call(d3.axisBottom(x));
 	
 			var histogram = d3.histogram()
-	  		//.value(function(d) {return d.price;})
-			.value(function(d) {return d.Dogs.eaten;})
+	  		.value(function(d) {return d.price;})
+			//.value(function(d) {return d.Dogs.eaten;})
 	  		.domain(x.domain())
 	  		.thresholds(x.ticks(70));
 	
