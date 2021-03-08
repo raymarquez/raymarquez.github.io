@@ -295,7 +295,7 @@
 	
 	
 			var x = d3.scaleLinear()
-	  		.domain([0,50000])          // d3.max(data, function(d) { return +d.price })
+	  		.domain([0,35000])          // d3.max(data, function(d) { return +d.price })
           		//.domain([0,d3.max(data, function(d) { return +d.price })])
 			//.domain([0,d3.max(data, function(d) { return +d.cases })])
 			.range([0, width]);
@@ -328,7 +328,7 @@
 	    			.attr("width", function(d) {return x(d.x1) - x(d.x0)  ;})
 	    			.attr("height", function(d) {return height - y(d.length);})
 	    			//.style("fill","#69b3a2")
-				.style("fill","gold")
+				.style("fill","orange")
 	
 		});
 		</script>
