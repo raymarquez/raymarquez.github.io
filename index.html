@@ -288,13 +288,13 @@
 
 		//d3.csv("https://raw.githubusercontent.com/holtzy/data_to_viz/master/Example_dataset/1_OneNum.csv", function(data) { 
 		//d3.csv("http://datasets.flowingdata.com/hot-dog-contest-winners.csv", function(data) {
-		d3.csv("hot-dog-contest-winners.csv", function(data) {	
+		d3.csv("https://raw.githubusercontent.com/nytimes/covid-19-data/master/us-states.csv", function(data) {
 	
 	
 			var x = d3.scaleLinear()
 	  		//.domain([0,1000])          // d3.max(data, function(d) { return +d.price })
           		//.domain([0,d3.max(data, function(d) { return +d.price })])
-			.domain([0,d3.max(data, function(d) { return +d.Dogs.eaten })])
+			.domain([0,d3.max(data, function(d) { return +d.cases })])
 			.range([0, width]);
 	
 			svg.append("g")
@@ -303,7 +303,7 @@
 	
 			var histogram = d3.histogram()
 	  		//.value(function(d) {return d.price;})
-			.value(function(d) {return d.Dogs.eaten;})
+			.value(function(d) {return d.cases;})
 	  		.domain(x.domain())
 	  		.thresholds(x.ticks(70));
 	
@@ -333,7 +333,7 @@
 		<!-------------------------------------------------------------------------------------------------------->	
 		<!-----------------------------------------------  FOOTER  												-->	
 		<footer class="footer navbar-fixed-bottom"><div class="two-toned-footer-color"></div>
-			<p class="text-muted text-muted-footer text-center">&copy; Prescient Insights, Analytics, Machine Learning and Visualization  (16-Nov-2019 | Ray )</p>
+			<p class="text-muted text-muted-footer text-center">&copy; Prescient Insights - Analytics, Machine Learning and Visualization  (09-Mar-2021 | Ray )</p>
 		</footer> 
 		
 		<!-----------------------------------------------  JQUERY  -->	
