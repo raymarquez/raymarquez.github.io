@@ -101,7 +101,7 @@
 						
 						<h1 align="center"><strong><u></u></strong></h1>
 						<h1 align="center"><strong><u></u></strong></h1>
-						<h2 align="center"><strong><font color="blue">WHAT IS IT ? - !! </font></strong></h2>
+						<h2 align="center"><strong><font color="blue">WHAT IS IT ? - !!! </font></strong></h2>
 						<h2 align="center"><strong><u></u></strong></h2>
 
 			
@@ -286,8 +286,8 @@
     			.attr("transform",
           			"translate(" + margin.left + "," + margin.top + ")");
 
-		d3.csv("https://raw.githubusercontent.com/holtzy/data_to_viz/master/Example_dataset/1_OneNum.csv", function(data) { 
-		//d3.csv("http://datasets.flowingdata.com/hot-dog-contest-winners.csv", function(data) {
+		//d3.csv("https://raw.githubusercontent.com/holtzy/data_to_viz/master/Example_dataset/1_OneNum.csv", function(data) { 
+		d3.csv("http://datasets.flowingdata.com/hot-dog-contest-winners.csv", function(data) {
 	
 			var x = d3.scaleLinear()
 	  		.domain([0,1000])          // d3.max(data, function(d) { return +d.price })
@@ -300,8 +300,8 @@
 	  		.call(d3.axisBottom(x));
 	
 			var histogram = d3.histogram()
-	  		.value(function(d) {return d.price;})
-			//.value(function(d) {return d.Dogs.eaten;})
+	  		//.value(function(d) {return d.price;})
+			.value(function(d) {return d.Dogs.eaten;})
 	  		.domain(x.domain())
 	  		.thresholds(x.ticks(70));
 	
