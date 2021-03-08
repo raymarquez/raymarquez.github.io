@@ -337,7 +337,7 @@
 		
 		svg.selectAll("rect")
   			.transition()
-  			.duration(800)
+  			.duration(1800)
   			.attr("y", function(d) { return y(d.Value); })
   			.attr("height", function(d) { return height - y(d.Value); })
   			.delay(function(d,i){console.log(i) ; return(i*100)})	
