@@ -335,10 +335,10 @@
 		
 		svg.selectAll("rect")
   			.transition()
-  			.duration(900)
+  			.duration(800)
   			.attr("y", function(d) { return y(d.Value); })
   			.attr("height", function(d) { return height - y(d.Value); })
-  			.delay(function(d,i){console.log(i) ; return(i*100)})	
+  			.delay(function(d,i){console.log(i) ; return(i*1000)})	
 			
 		})	
 		</script>
