@@ -1,0 +1,419 @@
+<!DOCTYPE html>
+<html lang="en">
+
+	<head>
+		<meta charset="UTF-8">	<title>IST 719 Informatio Visualization</title>
+		<!-- myD3 -->
+		<script src="https://d3js.org/d3.v4.js"></script>
+		<!-- <script  type="text/javascript" src="script.js"></script> -->
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+		<link rel="stylesheet"  href="05_style.css">
+
+	</head>
+
+	<body>
+		<!-------------------------------------------------------------------------------------------------------->
+		<!--  												NAV  												-->
+		<nav class="navbar navbar-default">
+			<div class="container-fluid">
+					<!--									... LANDING PAGE  									-->
+					<div class="navbar-header">
+						<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+							<span class="sr-only">Toggle navigation</span><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></button>
+						<a class="navbar-brand" href="index.html"><span class="latitude"></span>Main</a></div>
+					<!--									... VIZ & DATA PAGES 							-->
+					<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+						<ul class="nav navbar-nav navbar-right">
+							<!--<li><a href="index.html">ROADMAP</a></li>-->
+							<li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">ANALYSIS<span class="caret"></span></a>
+								<ul class="dropdown-menu">
+									<!--
+									<li><a href="viz/index_amrita.html">IST719.AdvanceTopic.d3js</a></li>
+									<li><a href="viz/index_james.html">James</a></li>
+									<li><a href="viz/index_jonathan.html">Jonathan</a></li>									
+									<li><a href="viz/index_nobon.html">Nobon</a></li>
+									<li><a href="viz/index_patrick.html">Patrick</a></li>
+									<li><a href="viz/index_sancta.html">Sancta</a></li>
+                                                                        -->
+									<li><a href="viz/index_ray.html">IST719.AdvanceTopic.d3js</a></li>
+
+									
+								</ul></li>
+							<!--<li><a href="index.html">FINDINGS</a></li>-->
+							<!--<li><a href="https://data.amerigeoss.org/nl/dataset/usda-rural-development-section-502-guaranteed-loan-program-active-loans-by-congressional-d">DATA</a></li></ul></div></div>-->
+							<li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">RESOURCES<span class="caret"></span></a>
+								<ul class="dropdown-menu">
+									
+									<!-- <li><a href="https://data.amerigeoss.org/nl/dataset/usda-rural-development-section-502-guaranteed-loan-program-active-loans-by-congressional-d" target="_blank">Data</a>
+                                                                             </li>
+									     <li><a href="https://www.usdaloans.com/articles/direct-vs-guaranteed/" target="_blank">USDA Loans</a></li> 
+                                                                        -->
+									
+									<li><a href="https://d3js.org/" target="_blank">D3js</a></li>
+									<li><a href="https://en.wikipedia.org/wiki/D3.js" target="_blank">wikipedia</a></li>
+									<li><a href="https://github.com/d3/d3-shape" target="_blank">D3.js github</a></li>
+								</ul></li>		
+		</nav>
+		<!-------------------------------------------------------------------------------------------------------->	
+		<!--                                                CONTAINER											-->
+						<h1><strong><center><font color="orange">D3.js  |  Data-Driven Documents</font></center></strong></h1>
+						<h1><strong><center><font color="blue"></font></center></strong></h1>	
+						
+						<h2><strong><center><font color="blue">IST 719 | Information Visualization</font></center></strong></h2>
+						<h1><strong><center><font color="blue"></font></center></strong></h1>
+						
+						<h2><strong><center><font color="blue">Advance Topics</font></center></strong></h2>
+						<h1><strong><center><font color="blue"></font></center></strong></h1>	
+						
+						<h1><strong><center><font color="blue"></font></center></strong></h1>	
+
+						<!--
+						<div class="content">	<img src="Logo_D3_orange.png" alt="D3" class="center" width=400 height=300> </div>
+						-->
+ 						<style>                                          
+						.center {
+  						display: block;
+  						margin-left: auto;
+  						margin-right: auto;							
+  						width: 50%;
+						}
+						</style>
+						
+						<!--
+                                                <h3><strong><u>USDA Direct Loan vs USDA Guaranteed Loans</u></strong></h3>
+						<ul>
+							<li><font size="4"> D3.js is a Javascript library used for producing dyna</font></li>
+							<li><font size="4"> USDA created both loan programs to boost homeownership in rural and suburban areas</font></li>
+							<li><font size="4"> The two programs have key differences and are meant for two very different situations:</font></li>
+							<ul>
+							<li><font size="3"> <u>Guaranteed Loan</u>: Meant for low- to moderate-income families</font></li>
+							<li><font size="3"> <u>Direct Loan</u>: Meant for very low-income families</font></li>
+							</ul>
+							<li><font size="4"> Primary difference between USDA Direct Loans and USDA Guaranteed Loans is who funds the actual loan:</font></li>
+							<ul>
+							<li><font size="3"> <u>Guaranteed Loan</u>: Private lenders fund the loan while the USDA backs each loan against default</font></li>
+							<li><font size="3"> <u>Direct Loan</u>: the USDA acts as the lender</font></li>
+							</ul>
+							
+						</ul>
+                                                -->
+						
+						
+						
+						<h1 align="center"><strong><u></u></strong></h1>
+						<h1 align="center"><strong><u></u></strong></h1>
+						<h2 align="center"><strong><font color="blue">WHAT IS IT ? - $$ </font></strong></h2>
+						<h2 align="center"><strong><u></u></strong></h2>
+
+			
+
+			 <figure class="table ">
+			<div class="container">
+    <table class="table table-bordered">
+  <caption class="hidden"></caption>
+	    
+    <!--<thead>
+                        <tr class="header-row">
+                                          <th scope="col">Topic</th>
+                                                        <th scope="col"></th>
+                                                        <th scope="col"></th>
+                                                                                                </tr>
+        </thead>
+     -->
+	    
+      <tbody>
+                    <tr>
+                              <td  scope="row" >D3.js</td>
+                                        <td >Javascript library producing dynamic, interactive data visualizations in web browsers</td>
+                                        <td >Selections, Transitions, Data-binding, Appending nodes using data</td>
+                                                                                                </tr>
+	      	    <tr>
+                              <td  scope="row" >Pre-built functions</td>
+                                        <td >Select elements</td>
+                                        <td >Create SVG objects</td>
+                                                                                                </tr>
+	            <tr>
+                              <td  scope="row" ></td>
+                                        <td >Styles</td>
+                                        <td >Transitions</td>
+                                                                                                </tr>
+	            <tr>
+                              <td  scope="row" ></td>
+                                        <td >Dynamic effects</td>
+                                        <td >Tooltips</td>
+                                                                                                </tr>
+	      
+                    <tr>
+                              <td  scope="row" >Data Size</td>
+                                        <td >Large datasets can be bound to SVG objects using D3.js functions</td>
+                                        <td >D</td>
+                                                                                                </tr>
+                    <tr>
+                              <td  scope="row" >Data Formats</td>
+                                        <td >JSON, CSV, geoJSON</td>
+                                        <td >Other data formats using JS functions</td>
+                                                                                                </tr>
+                    <!--<tr>
+                              <td  scope="row" >Property Requirements </td>
+                                        <td >Home must be structurally sound, functionally adequate, in good repair and located in a &quot;rural&quot; area.</td>
+                                        <td >Home must be structurally sound, functionally adequate, in good repair and located in a &quot;rural&quot; area.</td>
+                                                                                                </tr>
+                    <tr>
+                              <td  scope="row" >Max Loan Amount</td>
+                                        <td >Property must be less than 2,000 square feet.</td>
+                                        <td >No limit.</td>
+                                                                                                </tr>
+		   -->
+                    <tr>
+                                                                                                                                            </tr>
+        </tbody>
+</table>      </figure>
+<!--	
+				 <h3 align="center"><strong><u>Loan Program Process</u></strong></h3>				  
+
+  <figure class="table ">
+    <div class="container">
+    <table class="table table-bordered">
+  <caption class="hidden"></caption>
+    <thead>
+                        <tr class="header-row">
+                                          <th scope="col">Topic</th>
+                                                        <th scope="col">USDA Direct Loan</th>
+                                                        <th scope="col">USDA Guaranteed Loan</th>
+                                                                                                                                            </tr>
+        </thead>
+      <tbody>
+                    <tr>
+                              <td  scope="row" >Application</td>
+                                        <td >Submit application directly to your local Rural Development Office.</td>
+                                        <td >Apply directly with a lender who will submit underwritten file to GUS for approval.</td>
+                                                                                                </tr>
+                    <tr>
+                              <td  scope="row" >Interest Rates</td>
+                                        <td >Fixed rate based on current market rate at loan approval or loan closing, whichever is lower. Current rate is 3.25 percent.</td>
+                                        <td >Fixed rate determined by lender based on qualifying factors.</td>
+                                                                                                </tr>
+                    <tr>
+                              <td  scope="row" >Loan Terms</td>
+                                        <td >Loan term is 33 years and 38 years depending on income level.</td>
+                                        <td >Traditional 15-year and 30-year options are available.</td>
+                                                                                                </tr>
+                    <tr>
+                              <td  scope="row" >Fees</td>
+                                        <td >No mortgage insurance is required.</td>
+                                        <td >Two forms of mortgage insurance:an upfront guarantee fee, and annual mortgage insurance premium paid as part of your monthly mortgage payment.</td>
+                                                                                                </tr>
+        </tbody>
+</table>      </figure>
+-->	
+			<!-- myD3 -->	 
+			<!-- <div id = "my_dataviz"></div>
+			<div id = "my_dataviz2"></div>
+			-->
+			<!-- <div class="col-sm-12 col-md-8"> -->
+			<div class="col-sm-12">
+				<div class="box">
+					<div class="header"><center><h1 align="center" class="summary"><font color="blue">Charts and Visualizations</font></h1></center>
+					</div>
+
+					<div class="content">
+						<!--<div class="thumbnail col-md-9">-->
+						
+						<a <div class="caption"><h3><center><b>Histogram - Covid-19 Deaths | Jan2020</b></center></h3></div>						
+						   <div id = "my_histogram_01" align="center"></div>
+						   <div class="content"><img src="01a_AdvTopic_Histogram_CovidDeaths_R.png" alt="Hist Covid Deaths" class="center" width=600 height=600> </div>
+				                </a>
+						
+						<a <div class="caption"><h3><center><b>Bar Chart - Covid-19 Deaths | Jan2020</b></center></h3></div>						
+						   <div id = "my_histogram_02" align="center"></div>
+						   <div class="content"><img src="01a_AdvTopic_Histogram_CovidDeaths_R.png" alt="Hist Covid Deaths" class="center" width=600 height=600> </div>
+				                </a>
+				
+			<!--				<a href="viz/index_amrita.html"><img src="viz/amrita.jpg" alt="Amrita" height="180" width="180"></a>
+								<!--<<div class="caption"><h3><b>Amrita</b></h3></div></a>-->							
+			<!--				<a href="viz/index_james.html"><img src="viz/Pic_James.jpeg" alt="James" height="180" width="180"></a>
+								<!--<div class="caption"><h3><b>James</b></h3></div></a>-->						
+			<!--				<a href="viz/index_jonathan.html"><img src="viz/Pic_Jonathan.jpeg" alt="Jonathan" height="180" width="180"></a>
+								<!--<<div class="caption"><h3><b>Jonathan</b></h3></div></a>-->
+			<!--				<a href="viz/index_nobon.html"><img src="viz/Pic_Nobon.jpeg" alt="Nobon" height="180" width="180"></a>
+								<!--<<div class="caption"><h3><b>Nobon</b></h3></div></a>-->
+			<!--				<a href="viz/index_patrick.html"><img src="viz/patrick2.jpg" alt="Patrick" height="180" width="180"></a>
+								<!--<<div class="caption"><h3><b>Patrick</b></h3></div></a>	-->							
+			<!--				<a href="viz/index_ray.html"><img src="viz/Pic_Ray.jpeg" alt="Ray" height="180" width="180"></a>
+								<!--<<div class="caption"><h3><b>Ray</b></h3></div></a>-->
+			<!--				<a href="viz/index_sancta.html"><img src="viz/Sancta.jpg" alt="Sancta" height="180" width="180"></a>
+								<!--<<div class="caption"><h3><b>Sancta</b></h3></div></a>-->
+						<!--</div>-->
+					</div>
+
+					<!--
+					<div class="header"><h1 class="summary">INSIGHTers</h1></div>
+							<a href="" target="_blank" src="viz/LinkedInLogo.jpeg"><strong>Amrita</strong></a>	
+							<a href="" target="_blank" src="viz/LinkedInLogo.jpeg" ><strong>|  James</strong></a>							
+							<a href="https://www.linkedin.com/in/jonathan-r-66959a125/" target="_blank" src="viz/LinkedInLogo.jpeg" ><strong>|  Jonathan</strong></a>	
+							<a href="" target="_blank" src="viz/LinkedInLogo.jpeg" ><strong>|  Nobon</strong></a>
+							<a href="https://www.linkedin.com/in/patrick-glover-0398302a/" target="_blank" src="viz/LinkedInLogo.jpeg" ><strong>|  Patrick</strong></a>	
+							<a href="https://www.linkedin.com/in/raymarquezpmp/" target="_blank" src="viz/LinkedInLogo.jpeg" img="viz/LinkedInLogo.jpeg"><strong>|  Ray</strong></a>
+							<a href="https://www.linkedin.com/in/isimbi-sancta-281288127/" target="_blank" src="viz/LinkedInLogo.jpeg" ><strong>|  Sancta</strong></a>
+							<img src="viz/LinkedInLogo.jpeg" height="50" width="50">
+					
+					<div class="header"><h1 class="summary">Project Advisors</h1></div>		
+							<a href="https://www.linkedin.com/in/neffashley/" target="_blank" src="viz/LinkedInLogo.jpeg"><strong>Ashley</strong></a>	
+							<a href="https://www.linkedin.com/in/dr-carl-arrington-jr-84611414/" target="_blank" src="viz/LinkedInLogo.jpeg"><strong>|  Dr Carl</strong></a>	
+							<a href="http://www.linkedin.com/in/adamcsilva" target="_blank" src="viz/LinkedInLogo.jpeg"><strong>|  Adam</strong></a>		
+							<a href="https://www.linkedin.com/in/camirinshiqaq/" target="_blank" src="viz/LinkedInLogo.jpeg"><strong>|  Camir</strong></a>	
+							<a href="https://www.linkedin.com/in/joe-corvino" target="_blank" src="viz/LinkedInLogo.jpeg"><strong>|  Joe</strong></a>			
+							<a href="" target="_blank" src="viz/LinkedInLogo.jpeg"><strong>|  Nimisha</strong></a>	
+							<img src="viz/LinkedInLogo.jpeg" height="50" width="50">						
+					
+					<div class="header"><h1 class="summary">Resources| References </h1></div>
+						
+						<div class="content">
+							<a href="https://data.amerigeoss.org/nl/dataset/usda-rural-development-section-502-guaranteed-loan-program-active-loans-by-congressional-d" target="_blank">
+								<img src="viz/i_dataLogo.jpeg" alt="datasource" height "180" width="180"></a>	
+							<a href="https://www.usdaloans.com/articles/direct-vs-guaranteed/" target="_blank">
+								<img src="viz/i_usdaLogo.png" alt="usda" height "180" width="180"></a>	
+							<p class="para text-right"><i> 24-Nov-2019 | Ray</i></p>	
+						</div>
+				        -->
+				</div>
+			</div>
+		        
+
+		<!--<p id="demo">Bar Chart</p> -->
+		
+		<script>
+		var margin = {top:10, right:30, bottom:30, left:40},
+  		  width = 500 - margin.left - margin.right,
+		    height = 400 - margin.top - margin.bottom;
+
+		var svg = d3.select("#my_histogram_01")
+ 		.append("svg")
+   		 	.attr("width", width + margin.left + margin.right)
+  		  	.attr("height", height + margin.top + margin.bottom)
+  		.append("g")
+    			.attr("transform",
+          			"translate(" + margin.left + "," + margin.top + ")");
+
+		//d3.csv("https://raw.githubusercontent.com/holtzy/data_to_viz/master/Example_dataset/1_OneNum.csv", function(data) { 
+		//d3.csv("http://datasets.flowingdata.com/hot-dog-contest-winners.csv", function(data) {
+		d3.csv("https://raw.githubusercontent.com/nytimes/covid-19-data/master/us-states.csv", function(data) {
+	
+	
+			var x = d3.scaleLinear()
+	  		.domain([0,35000])          // d3.max(data, function(d) { return +d.price })
+          		//.domain([0,d3.max(data, function(d) { return +d.price })])
+			//.domain([0,d3.max(data, function(d) { return +d.cases })])
+			.range([0, width]);
+	
+			svg.append("g")
+	  		.attr("transform", "translate(0," + height + ")")
+	  		.call(d3.axisBottom(x));
+	
+			var histogram = d3.histogram()
+	  		//.value(function(d) {return d.price;})
+			.value(function(d) {return d.deaths;})
+	  		.domain(x.domain())
+	  		.thresholds(x.ticks(10));
+	
+			var bins = histogram(data);
+	
+			var y = d3.scaleLinear()
+	  		.range([height, 0]);
+	  		y.domain([0, d3.max(bins, function(d) {return d.length; })]);
+	
+			svg.append("g")
+	  		.call(d3.axisLeft(y));
+	
+			svg.selectAll("rect")
+	  		.data(bins)
+	  		.enter()
+	  		.append("rect")
+	    			.attr("x",1)
+	    			.attr("transform",function(d) {return "translate(" + x(d.x0) + "," + y(d.length) + ")";})
+	    			.attr("width", function(d) {return x(d.x1) - x(d.x0)  ;})
+	    			.attr("height", function(d) {return height - y(d.length);})
+	    			//.style("fill","#69b3a2")
+				.style("fill","orange")
+	
+		});
+		</script>
+				
+		<script>
+			
+		var margin = {top:10, right:30, bottom:30, left:40},
+  		  	width = 460 - margin.left - margin.right,
+		    	height = 450 - margin.top - margin.bottom;
+
+		var svg = d3.select("#my_histogram_02")
+ 		.append("svg")
+   		 	.attr("width", width + margin.left + margin.right)
+  		  	.attr("height", height + margin.top + margin.bottom)
+  		.append("g")
+    			.attr("transform",
+          			"translate(" + margin.left + "," + margin.top + ")");
+			
+		d3.csv("https://raw.githubusercontent.com/holtzy/data_to_viz/master/Example_dataset/7_OneCatOneNum_header.csv", function(data) {
+		var x = d3.scaleBand()
+  			.range([ 0, width ])
+  			.domain(data.map(function(d) { return d.Country; }))
+  			.padding(0.2);
+		svg.append("g")
+  			.attr("transform", "translate(0," + height + ")")
+  			.call(d3.axisBottom(x))
+  			.selectAll("text")
+    				.attr("transform", "translate(-10,0)rotate(-45)")
+    				.style("text-anchor", "end");
+
+		var y = d3.scaleLinear()
+  			.domain([0, 13000])
+  			.range([ height, 0]);
+		svg.append("g")
+  			.call(d3.axisLeft(y));
+			
+
+		svg.selectAll("mybar")
+  			.data(data)
+  			.enter()
+  			.append("rect")
+    				.attr("x", function(d) { return x(d.Country); })
+    				.attr("width", x.bandwidth())
+    				.attr("fill", "#69b3a2")
+    				// no bar at the beginning thus:
+    				.attr("height", function(d) { return height - y(0); }) // always equal to 0
+    				.attr("y", function(d) { return y(0); })
+		
+		svg.selectAll("rect")
+  			.transition()
+  			.duration(800)
+  			.attr("y", function(d) { return y(d.Value); })
+  			.attr("height", function(d) { return height - y(d.Value); })
+  			.delay(function(d,i){console.log(i) ; return(i*100)})	
+			
+		})	
+		</script>
+
+		<!-------------------------------------------------------------------------------------------------------->	
+		<!-----------------------------------------------  FOOTER  												-->	
+		<footer class="footer navbar-fixed-bottom"><div class="two-toned-footer-color"></div>
+			<p class="text-muted text-muted-footer text-center">&copy; Prescient Insights - Analytics, Machine Learning and Visualization  (09-Mar-2021 | Ray )</p>
+		</footer> 
+		
+		<!-----------------------------------------------  JQUERY  -->	
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>		
+
+		<!-----------------------------------------------  BOOTSTRAP  -->	
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+
+
+	</body>
+
+
+
+				   
+</html>
