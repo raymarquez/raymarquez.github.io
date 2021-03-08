@@ -11,7 +11,6 @@ var svg = d3.select("#my_dataviz")
     .attr("transform",
           "translate(" + margin.left + "," + margin.top + ")");
 
-//d3.csv ("http://datasets.flowingdata.com/hot-dog-contest-winners.csv", function(data) {
 d3.csv("https://raw.githubusercontent.com/holtzy/data_to_viz/master/Example_dataset/1_OneNum.csv", function(data) {
 	
 	var x = d3.scaleLinear()
