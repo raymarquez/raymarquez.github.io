@@ -59,7 +59,7 @@
 		<!-------------------------------------------------------------------------------------------------------->	
 		<!--                                                CONTAINER											-->
 						<h1><strong><center><font color="blue">IST 719 | Information Visualization</font></center></strong></h1>
-						<h1><strong><center><font color="blue"><u>D3.js Data-Driven Documents $</u></font></center></strong></h1>
+						<h1><strong><center><font color="blue"><u>D3.js Data-Driven Documents $$$</u></font></center></strong></h1>
 						<h1><strong><center><font color="blue"></font></center></strong></h1>
 						<!--
 						<div class="content">	<img src="Logo_D3_orange.png" alt="D3" class="center" width=400 height=300> </div>
@@ -278,11 +278,13 @@
     			.attr("transform",
           			"translate(" + margin.left + "," + margin.top + ")");
 
-		d3.csv("https://raw.githubusercontent.com/holtzy/data_to_viz/master/Example_dataset/1_OneNum.csv", function(data) {
+		d3.csv("https://raw.githubusercontent.com/holtzy/data_to_viz/master/Example_dataset/1_OneNum.csv", function(data) { 
+		//d3.csv("http://datasets.flowingdata.com/hot-dog-contest-winners.csv", function(data) {
 	
 			var x = d3.scaleLinear()
-	  		.domain([0,1000])          // d3.max(data, function(d) { return +d.price })
-          		.range([0, width]);
+	  		//.domain([0,1000])          // d3.max(data, function(d) { return +d.price })
+          		.domain([0,d3.max(data, function(d) { return +d.price })])
+			.range([0, width]);
 	
 			svg.append("g")
 	  		.attr("transform", "translate(0," + height + ")")
